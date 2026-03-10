@@ -14,8 +14,6 @@ void Executer::execute(const std::vector<std::string> &tokens)
 std::vector<const char*> argv;
 std::string outputFile;
 bool redirect = false;
-    
-    std::vector<const char *> argv;
 
     for (size_t i = 0; i < tokens.size(); ++i)
 {
