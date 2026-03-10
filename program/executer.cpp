@@ -1,7 +1,7 @@
 #include "executer.hpp"
 #include "builtins.hpp"
 #include "unistd.h"
-#include "fcntl.h>
+#include <fcntl.h>
 #include "sys/wait.h"
 #include <iostream>
 #include <vector>
