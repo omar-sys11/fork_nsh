@@ -5,11 +5,31 @@
 #include "sys/wait.h"
 #include <iostream>
 #include <vector>
+#include <string>
+
+static std::vector<std::string> history;
+
 
 void Executer::execute(const std::vector<std::string> &tokens)
 {
-    if (Builtins::handle(tokens))
-        return;
+   
+std::string command;
+
+for (const auto &t : tokens)
+    command += t + " ";
+
+history.push_back(command);
+
+if (tokens[0] == "history")
+{
+    for (size_t i = 0; i < history.size(); i++)
+        std::cout << i + 1 << " " << history[i] << std::endl;
+
+    return;
+}
+
+	 if (Builtins::handle(tokens))
+        	return;
 
 std::vector<const char*> argv;
 std::string outputFile;
